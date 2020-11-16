@@ -1,0 +1,551 @@
+/* Copyright 2020, 2026 Budh, Inc.
+ *
+ *   Portions adapted from Mx's data/style/default.css
+ *   Copyright 2009 Intel Corporation
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms and conditions of the GNU Lesser General Public License,
+ * version 2.1, as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for
+ * more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin St - Fifth Floor, Boston, MA 02110-1301 USA.
+ */
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background: #fff;
+    font-family: "Roboto", sans-serif;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+
+a {
+    padding: 0px;
+    color: #66eeee;
+    font-size: small;
+}
+
+a:hover {
+    padding: 0px;
+    border-top: #6eedf8 solid;
+    border-bottom: #6eedf8 solid;
+    border-radius: 0%;
+    color: #6eedf8;
+}
+
+
+/*Topbar*/
+
+.panel {
+    margin: 10px 0;
+    text-align: center;
+    background-color: rgba(00, 11, 22, 0.5);
+    position: fixed;
+    width: 100%;
+}
+
+.panel .popup-header {
+    top: 10%;
+    right: 5%;
+    color: #6eedf8;
+    padding: 9px;
+    display: inline-block;
+    text-decoration: none;
+    text-decoration: 2px solid transparent;
+    font-size: 1.5em;
+    background-color: transparent;
+    border: transparent;
+    position: absolute;
+}
+
+.panel .popup-header:hover {
+    border: 5px solid#6eedf8;
+    border-radius: 25%;
+    padding: 5px;
+    color: #6eedf8;
+}
+
+.panel .popup-menu {
+    top: 0;
+    right: 0;
+    color: #ffff;
+    padding: 9px;
+    display: inline-block;
+    text-decoration: none;
+    text-decoration: 2px solid transparent;
+    font-size: 1em;
+}
+
+.panel .popup-menu:hover {
+    border: 5px solid#6eedf8;
+    border-top-right-radius: 25%;
+    padding: 5px;
+    color: #6eedf8;
+    background-color: rgba(42, 161, 152, 0.9);
+}
+
+.panel a {
+    margin: 0 20px;
+    color: #ffff;
+    padding: 9px;
+    display: inline-block;
+    text-decoration: none;
+    text-decoration: 2px solid transparent;
+    font-size: 1em;
+}
+
+.panel a:hover {
+    border: 5px solid#6eedf8;
+    border-radius: 25%;
+    padding: 5px;
+    color: #6eedf8;
+}
+
+
+/*HEADER*/
+
+header {
+    background: url('../../img/adwaita-morning.jpg')#49a3d6;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    max-height: 600px;
+}
+
+header .container-text {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 190px 0;
+}
+
+header .container-text .text {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 3px;
+    display: inline-block;
+    text-align: center;
+    padding: 20px 60px;
+}
+
+header .container-text .text h1,
+header .container-text .text h2 {
+    color: #fff;
+    font-weight: 300;
+    margin: 0;
+}
+
+header .container-text .text .name {
+    margin-bottom: 10px;
+    font-size: 50px;
+    line-height: 50px;
+}
+
+header .container-text .text .occupation {
+    font-size: 25px;
+    line-height: 50px;
+}
+
+header .container-text .text .slogan {
+    font-size: 25px;
+    line-height: 50px;
+}
+
+header .container-text .text .occupation {
+    font-size: 25px;
+    line-height: 25px;
+}
+
+.main {
+    background: rgb(0, 4, 41);
+}
+
+
+/*Services*/
+
+.main .services {
+    border: 20px radial-gradient(rgb(0, 4, 41, ), #6eedf8);
+    padding: 60px 10%;
+    background-color: rgba(00, 11, 22, 0.5);
+}
+
+.main .services .container {
+    overflow: hidden;
+}
+
+.main .services .title {
+    font-size: 34px;
+    line-height: 34px;
+    margin-bottom: 40px;
+    font-weight: 300;
+    color: #6eedf8/*323068*/
+    ;
+    text-align: center;
+    border: #6eedf8 solid;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.main .services .subtitle {
+    font-size: 25px;
+    line-height: 34px;
+    margin-bottom: 40px;
+    font-weight: 300;
+    color: #6eedf8/*323068*/
+    ;
+    text-align: center;
+}
+
+.main .services .container-service {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.main .services .container-service .service {
+    width: 20%;
+    margin-bottom: 50px;
+}
+
+.main .services .container-service .service .thumb {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.main .services .container-service .service .thumb img {
+    width: 100%;
+    vertical-align: top;
+    border-radius: 30px;
+    padding: 9px;
+    /*esto le da el efecto de circulo a las fotos*/
+}
+
+.main .services .container-service .service .thumb img:hover {
+    width: 100%;
+    vertical-align: top;
+    border-radius: 30px;
+    padding: 5px;
+    border: #6eedf8 solid;
+    border-width: 10px;
+    color: rgba(42, 161, 152, 0.9);
+    opacity: 60%;
+    /*esto le da el efecto de circulo a las fotos*/
+}
+
+.main .services .container-service .service .service-info {
+    text-align: center;
+}
+
+.main .services .container-service .service .name {
+    font-weight: 700;
+    font-size: 20px;
+    color: #3895ea;
+    margin-bottom: 10px;
+}
+
+.main .services .container-service .service .category {
+    font-size: 18px;
+    color: #b58900/*#636363*/
+    ;
+}
+
+.main .services .container-service .service .abstract {
+    font-size: 14px;
+    color: #ffff/*#636363*/
+    ;
+}
+
+.main .services .container-service .service .btn1 {
+    width: 70%;
+    font-size: 16px;
+    padding: 15px 0;
+    text-align: center;
+    display: inline-block;
+    border-radius: 100px;
+    color: #49a3d6;
+    border: 5px solid #49a3d6;
+    background-color: transparent;
+}
+
+.main .services .container-service .service .btn1:hover {
+    width: 70%;
+    font-size: 16px;
+    padding: 15px 0;
+    text-align: center;
+    display: inline-block;
+    border-radius: 100px;
+    color: #000000;
+    border: 5px solid lawngreen;
+    background-color: lawngreen;
+}
+
+
+/*Recent Projects*/
+
+.main .recent-projects {
+    border: 20px radial-gradient(rgb(0, 4, 41, ), #6eedf8);
+    padding: 60px 0;
+    background-color: darkslategray;
+}
+
+.main .recent-projects .container {
+    overflow: hidden;
+}
+
+.main .recent-projects .title {
+    font-size: 34px;
+    line-height: 34px;
+    margin-bottom: 40px;
+    font-weight: 300;
+    color: #6eedf8/*323068*/
+    ;
+    text-align: center;
+    border: #6eedf8 solid;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.main .recent-projects .subtitle {
+    font-size: 25px;
+    line-height: 34px;
+    margin-bottom: 40px;
+    font-weight: 300;
+    color: #6eedf8/*323068*/
+    ;
+    text-align: center;
+}
+
+.main .recent-projects .container-project {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.main .recent-projects .container-project .project {
+    width: 30%;
+    margin-bottom: 50px;
+}
+
+.main .recent-projects .container-project .project .thumb {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.main .recent-projects .container-project .project .thumb img {
+    width: 100%;
+    vertical-align: top;
+    border-radius: 30px;
+    padding: 9px;
+    /*esto le da el efecto de circulo a las fotos*/
+}
+
+.main .recent-projects .container-project .project .thumb img:hover {
+    width: 100%;
+    vertical-align: top;
+    border-radius: 60px;
+    padding: 5px;
+    border: #6eedf8 solid;
+    border-width: 10px;
+    color: rgba(42, 161, 152, 0.9);
+    opacity: 60%;
+    /*esto le da el efecto de circulo a las fotos*/
+}
+
+.main .recent-projects .container-project .project .project-info {
+    text-align: center;
+}
+
+.main .recent-projects .container-project .project .name {
+    font-weight: 700;
+    font-size: 20px;
+    color: #66eeee;
+    margin-bottom: 10px;
+}
+
+.main .recent-projects .container-project .project .category {
+    font-size: 18px;
+    color: #b58900/*#636363*/
+    ;
+}
+
+.main .recent-projects .container-project .project .abstract {
+    font-size: 14px;
+    color: #ffff/*#636363*/
+    ;
+}
+
+.main .recent-projects .container-project .project .btn1 {
+    width: 70%;
+    font-size: 16px;
+    padding: 15px 0;
+    text-align: center;
+    display: inline-block;
+    border-radius: 100px;
+    color: #49a3d6;
+    border: 5px solid #49a3d6;
+    background-color: transparent;
+}
+
+.main .recent-projects .container-project .project .btn1:hover {
+    width: 70%;
+    font-size: 16px;
+    padding: 15px 0;
+    text-align: center;
+    display: inline-block;
+    border-radius: 100px;
+    color: black;
+    border: 5px solid lawngreen;
+    background-color: lawngreen;
+}
+
+
+/*Workspace*/
+
+.main .workspace {
+    border: 20px radial-gradient(rgb(0, 4, 41, ), #6eedf8);
+    padding: 60px 0;
+    background-color: rgba(00, 11, 22, 0.5);
+}
+
+
+/*Tables*/
+
+.main .abstract_table {
+    border: #66eeee solid;
+    background-color: darkblue;
+    color: #66eeee;
+    margin: 10% 10% 10% 10%;
+}
+
+.main .abstract_table .row {
+    color: #6eedf8;
+    padding: 0.1%;
+    margin: 1%;
+}
+
+.main .abstract_table .col {
+    padding: 0%;
+    margin: auto;
+}
+
+.main .abstract_table .row:hover,
+.main .abstract_table .col:hover {
+    background-color: rgb(0, 4, 41);
+}
+
+table {
+    border: #66eeee solid;
+    background-color: darkblue;
+    color: #66eeee;
+    margin: 10% 10% 10% 10%;
+}
+
+tr {
+    color: #6eedf8;
+    padding: 0.1%;
+    margin: 1%;
+}
+
+td {
+    padding: 5%;
+    margin: auto;
+    width: 1%;
+    text-align: justify;
+}
+
+tr:hover {
+    background-color: rgba(0, 4, 41, 0.9);
+}
+
+
+/*Lists*/
+
+
+/*Dock*/
+
+.container-dock {
+    width: 90px;
+    height: 240px;
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+}
+
+.dock {
+    left: 25%;
+    right: 25%;
+    bottom: 0%;
+    text-align: center;
+    background-color: rgba(255, 0, 221, 0.5);
+    position: fixed;
+    width: 50%;
+    height: 5%;
+    border-top-left-radius: 15%;
+    border-top-right-radius: 15%;
+}
+
+.dock a {
+    margin: 0 20px;
+    color: #ffff;
+    padding: 9px;
+    display: inline-block;
+    text-decoration: none;
+    text-decoration: 2px solid transparent;
+    font-size: 1em;
+}
+
+.dock a:hover {
+    border: 5px solid#6eedf8;
+    border-radius: 25%;
+    padding: 5px;
+    color: #6eedf8;
+}
+
+.options .agreement .container-time .time .btn1:hover {
+    background: #008239;
+    color: #fff;
+}
+
+
+/*-----------------------MEDIA QUERIES--------------------*/
+
+@media screen and (max-width: 800px) {
+    .panel {
+        text-align: center;
+    }
+    .dock {
+        text-align: center;
+    }
+    .main .services .container-service .service {
+        width: 46%;
+    }
+    .main .recent-projects .container-project .project {
+        width: 46%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    header .container-text .text .name {
+        font-size: 35px;
+    }
+    header .container-text .text .occupation {
+        font-size: 18px;
+    }
+}

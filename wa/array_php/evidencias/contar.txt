@@ -1,0 +1,20 @@
+<?PHP
+public funtion contarNumeros($x=["2","10","5","25","11","5"])
+{
+$c=0;
+   for($i=0;$i<= 50;$i++)
+   {
+    $w=0;
+     for($j=0;$j< sizeof(x);$j++)
+     {
+      if(x[j]==i)
+      {
+       $c=$c+1;
+      }
+      echo "$i s:$c";
+      $c=0;
+     }
+   }
+}
+
+?>
