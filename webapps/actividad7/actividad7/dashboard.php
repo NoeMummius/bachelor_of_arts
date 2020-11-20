@@ -1,5 +1,5 @@
 <?php
- //include('sessions.php');
+ include('sessions.php');
  require('mysql.php');
  require('cryptex.php');
 ?>
@@ -21,6 +21,7 @@
 			<form class="content" name="dashboard" method="post">
 				<ul id="menu">
 					<li><button type="submit" class="link" name="new" value="register" formaction="attachment.php">Registrar Evento</button></li>
+					<li><button type="submit" class="signin" name="logout" value="logout" formaction="logout.php">Salir</button></li>
 				</ul>
 				<div id="pitch">
 					<h1>Gestion de la publicación, actualización y eliminación de distintos tipos de eventos.</h1>

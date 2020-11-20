@@ -19,7 +19,7 @@
 				</div>
 				<div class="clr"></div>
 			</div>
-			<form name="attachment" method="post">
+			<form class="form" name="attachment" method="post">
 				<ul id="menu">
 					<li><input type="text" name="username" placeholder="Nombre"></li>
 					<li><input type="text" name="password" placeholder="Tipo"></li>

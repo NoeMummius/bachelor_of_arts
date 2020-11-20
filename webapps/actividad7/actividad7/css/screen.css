@@ -157,7 +157,7 @@ img {
     vertical-align: middle;
 }
 
-form {
+form .form {
     /*background: url(../images/content.gif) repeat;*/
     padding: 30px;
     width: 325px;
@@ -167,7 +167,7 @@ form {
     vertical-align: middle;
 }
 
-form .buttons-container {
+form .form .buttons-container {
     /*background: url(../images/content.gif) repeat;*/
     width: fit-content;
     height: fit-content;
