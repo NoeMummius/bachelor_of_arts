@@ -2,6 +2,17 @@
  include('sessions.php');
  require('mysql.php');
  require('cryptex.php');
+ if(isset($_GET['upload']))
+ {
+	 $upload = $_GET['upload'];
+	 if($upload == true)
+	 {
+		 echo '<script type="text/javascript">alert("Registro exitoso");</script>';
+	 }
+	 else{
+		 echo '<script type="text/javascript">alert("Hubo un error durante la carga. Vuela a intentarlo");</script>';
+	 }
+ }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
@@ -20,7 +31,7 @@
 			</div>
 			<form class="content" name="dashboard" method="post">
 				<ul id="menu">
-					<li><button type="submit" class="link" name="new" value="register" formaction="attachment.php">Registrar Evento</button></li>
+					<li><button type="submit" class="link" name="register" value="new" formaction="attachment.php">Registrar Evento</button></li>
 					<li><button type="submit" class="signin" name="logout" value="logout" formaction="logout.php">Salir</button></li>
 				</ul>
 				<div id="pitch">
@@ -34,19 +45,14 @@
                  while ($Attachment = $aresult->fetch_assoc()) {
                      ?>
 				<div class="col">
-					<h2><input type="radio" name="attachment" value="<?php echo $Attachment['ID'];?>"> <?php echo $Attachment['Name'];?></h2>
-					<p><?php echo $Attachment['Type'];?></p>
-					<button type="submit" class="link" name="existing" value="manage" formaction="attachment.php">MORE</button>
+					<button type="submit" class="signup" name="manage" formaction="attachment.php" value="<?php echo $Attachment['ID'];?>"><span><?php echo $Attachment['Name']; ?>
+					<p><?php echo $Attachment['Type'];?></p></span></button>
 				</div>
 				<?php
-                 }
+				 }
+				 $aresult->free();
+				 $db->close();
 				?>
-				<div class="col last">
-					<h2>Evento 3</h2>
-					<p>About event.</p>
-					<a class="link" href="#">MORE</a>
-				</div>
-				<div class="clr"></div>
 				</form>
 		</div>
 	</body>

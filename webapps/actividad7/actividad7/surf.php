@@ -1,7 +1,15 @@
 <?php
- //include('sessions.php');
+ include('sessions.php');
  require('mysql.php');
  require('cryptex.php');
+ if(isset($_GET['result'])){
+	 if($_GET['result']){
+		 echo '<script type="text/javascript">alert("Actualización exitosa");</script>';
+	 }
+	 else{
+		 echo '<script type="text/javascript">alert("Ocurrió un error durante la carga.");</script>';
+	 }
+ }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
@@ -18,9 +26,10 @@
 				</div>
 				<div class="clr"></div>
 			</div>
-			<form class="content" name="dashboard" method="post">
+			<form class="content" name="surf" method="post">
 				<ul id="menu">
-					<li><button type="submit" class="link" name="new" value="register" formaction="attachment.php">Registrar Evento</button></li>
+					<li><label class="username" name="username"><?php echo utf8_decode(Cryptex::decrypt($_SESSION['Username'])).' '.utf8_decode(Cryptex::decrypt($_SESSION['Birthname']));?></label></li>
+					<li><button type="submit" class="signin" name="logout" value="logout" formaction="logout.php">Salir</button></li>
 				</ul>
 				<div id="pitch">
 					<h1>Gestion de la publicación, actualización y eliminación de distintos tipos de eventos.</h1>
@@ -33,19 +42,12 @@
                  while ($Attachment = $aresult->fetch_assoc()) {
                      ?>
 				<div class="col">
-					<h2><input type="radio" name="attachment" value="<?php echo $Attachment['ID'];?>"> <?php echo $Attachment['Name'];?></h2>
-					<p><?php echo $Attachment['Type'];?></p>
-					<button type="submit" class="link" name="existing" value="manage" formaction="attachment.php">MORE</button>
+					<button class="signup" type="submit" name="attend" formaction="attachment.php" value="<?php echo $Attachment['ID'];?>"> <?php echo $Attachment['Name'];?>
+					<p><?php echo $Attachment['Type'];?></p></button>
 				</div>
 				<?php
                  }
 				?>
-				<div class="col last">
-					<h2>Evento 3</h2>
-					<p>About event.</p>
-					<a class="link" href="#">MORE</a>
-				</div>
-				<div class="clr"></div>
 				</form>
 		</div>
 	</body>

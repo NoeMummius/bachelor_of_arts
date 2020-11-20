@@ -112,7 +112,7 @@
          $this->Cell(15);
          $this->Cell(10, 10, utf8_decode('Fecha: ') . date("d/m/Y"));
          $this->Cell(45);
-         $this->Image('imgages/thumb.png', 170, 8, 33);
+         $this->Image('images/budh_light_30x64.png', 170, 8, 33);
          $this->Ln(10);
      }
      public function Footer()
@@ -123,16 +123,16 @@
          //$this->Cell(0, 10, date(YYddmm));
      }
  }
- $Attachment = $_REQUEST['Attachment'];
- $Attendant = $_REQUEST['Attendant'];
+ $Attachment = $_REQUEST['attachment'];
+ $Attendant = $_REQUEST['attendant'];
  $db = new MySQL();
  $InsertTicketQry ="INSERT INTO `Tickets` (`Attachment`, `Attendant`) VALUES (?, ?)";
  $SelectTicketQry = "SELECT `T`.`ID`, `E`.*, CONCAT(`U`.`Lastnames`, `U`.`Names`) `Birthname` FROM ((`Tickets` `T` INNER JOIN `Attachments` `E` ON `T`.`Attachment` = `E`.`ID`) INNER JOIN `Users` `U` ON `T`.`Attendant` = `U`.`ID`) WHERE `T`.`Attachment` = ? AND `T`.`Attendant` = ?";
- $db->prepare($InsertAttachmentQry);
- $stmt->bind_param('sssssss', $name, $type, $desc, $sdate, $stime, $edate, $etime);
+ $stmt = $db->prepare($InsertTicketQry);
+ $stmt->bind_param('is', $Attachment, $Attendant);
  $result = $stmt->execute();
  if ($result) {
-     $header = 'dashboard.php?upload='.$result;
+     $header = 'surf.php?upload='.$result;
      $stmt->close();
      $stmt = $db->prepare($SelectTicketQry);
      $stmt->bind_param('is', $Attachment, $Attendant);

@@ -4,23 +4,23 @@
  require('cryptex.php');
  if(isset($_POST['birthdate']))
  {
-   $Username = $_POST['Username'];
-   $Password = $_POST['Password'];
-   $Names = $_POST['Names'];
-   $Lastnames = $_POST['Lastnames'];
-   $Birthdate = implode($_POST['Birthdate']);
+   $Username = $_POST['username'];
+   $Password = $_POST['password'];
+   $Names = $_POST['names'];
+   $Lastnames = $_POST['lastnames'];
+   $Birthdate = $_POST['birthdate'];
    $db = new MySQL();
    $Cryptkey = $db->getCryptkey();
-   $InsertAttendantQry = "INSERT INTO `Users` (`Username`, `Passowrd`, `Role`, `Names`, `Lastnames`, `Birthdate`) VALUES (?, AES_ENCRYPT(?, ?), 'Attendant', ?, ?, DATE(?))";
+   $InsertAttendantQry = "INSERT INTO `Users` (`ID`, `Password`, `Role`, `Names`, `Lastnames`, `Birthdate`) VALUES (?, AES_ENCRYPT(?, ?), 'Attendant', ?, ?, DATE(?))";
    $stmt = $db->prepare($InsertAttendantQry);
-   $stmt->bind_param('ssssss', $Username, $Password, $Names, $Lastnames, $Birthdate);
+   $stmt->bind_param('ssssss', $Username, $Password, $Cryptkey, $Names, $Lastnames, $Birthdate);
    $result = $stmt->execute();
    if($result)
    {
      session_start();
      $_SESSION['Username'] = Cryptex::encrypt($Username);
      $_SESSION['Birthname'] = Cryptex::encrypt($Names.' '.$Lastnames);
-     $header = 'index.php';
+     $header = 'surf.php';
      $stmt->close();
      $db->close();
      header('Location: '.$header);

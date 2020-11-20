@@ -196,6 +196,21 @@ input[type=text],
     letter-spacing: 2px;
 }
 
+label .username,
+.field {
+    float: left;
+    width: 250px;
+    height: 30px;
+    margin: 0 5px 15px 5px;
+    border-radius: 10px;
+    background-color: rgba(42, 161, 152, 0.9);
+    border-color: transparent;
+    color: rgb(0, 84, 90);
+    font-size: 20px;
+    font-weight: 1000;
+    letter-spacing: 2px;
+}
+
 input[type=password] {
     float: left;
     width: 250px;

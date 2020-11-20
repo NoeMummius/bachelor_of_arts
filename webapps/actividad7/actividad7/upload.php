@@ -8,8 +8,8 @@
  $edate = $_REQUEST['edate'];
  $etime = $_REQUEST['etime'];
  $db = new MySQL();
- $InsertAttachmentQry ="INSERT INTO `Attachments` (`Name`, `Type`, `Desc`, `S_date`, `S_time`, `E_date`, `E_hour`) VALUES (?, ?, ?, DATE(?), TIME(?), DATE(?), TIME(?))";
- $db->prepare($InsertAttachmentQry);
+ $InsertAttachmentQry ="INSERT INTO `Attachments` (`Name`, `Type`, `Desc`, `S_date`, `S_time`, `E_date`, `E_time`) VALUES (?, ?, ?, DATE(?), TIME(?), DATE(?), TIME(?))";
+ $stmt = $db->prepare($InsertAttachmentQry);
  $stmt->bind_param('sssssss', $name, $type, $desc, $sdate, $stime, $edate, $etime);
  $result = $stmt->execute();
  if($result)

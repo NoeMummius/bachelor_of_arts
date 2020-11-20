@@ -60,41 +60,6 @@
                            </div>
                         </div>
                   </form>
-                      <div class="col last">
-                          <h3>Informacion de eventos</h3>
-                          <div class="case">
-                              <img src="images/thumb.gif" alt="Case Thumb" />
-                              <p><a href="http://www.vizua.net">Eventos Recientes</a><br />
-                              Eventos que pasaron recientemente </p>
-                          </div>
-                          <div class="case">
-                              <img src="images/thumb.gif" alt="Case Thumb" />
-                              <p><a href="#"><br /><br /><br />Proximos Eventos</a><br />
-                              Muestra los eventos próximos </p>
-                          </div>
-                          <div class="case">
-                              <img src="images/thumb.gif" alt="Case Thumb" />
-                              <p><a href="#"><br /><br /><br />Eventos Eliminados</a><br />
-                              Muestralos eventos recientemente eliminados</p>
-                          </div>
-                      </div>
-                      <div class="clr"></div>
-                  </div>
-                  <div id="footer">
-                      <p id="links">
-                          <a href="#">Privacy Policy</a>
-                          <a href="#">Terms of Use</a>
-                      </p>
-                      <p>
-                          <a href="#">Home</a>
-                          <a href="#">Proximamente</a>
-                          <a href="#">Participantes</a>
-                          <a href="#">Eventos</a>
-                          <a href="#">News</a>
-                          <a href="#">About Us</a>
-                          <a href="#">Contact Us</a>
-                      </p>
-                  </div>
               </div>
           </body>
       </html>
