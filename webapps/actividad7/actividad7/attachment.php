@@ -2,19 +2,7 @@
  include('sessions.php');
  require('mysql.php');
  require('cryptex.php');
- $upload = false;
  $User = $_SESSION['Username'];
- if(isset($_GET['Upload']))
- {
-	 $upload = $_GET['Upload'];
-	 if($upload == true)
-	 {
-		 echo '<script type="text/javascript">alert("Registro exitoso");</script>';
-	 }
-	 else{
-		 echo '<script type="text/javascript">alert("Hubo un error durante la carga. Vuela a intentarlo");</script>';
-	 }
- }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
@@ -135,8 +123,6 @@
 			 $uresult->free();
 			 $stmt2->close();
 			 }
-			 $stmt1->close();
-			 $db->close();
 			?>
 	</body>
 </html>
