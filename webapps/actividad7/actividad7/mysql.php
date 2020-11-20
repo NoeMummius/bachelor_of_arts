@@ -12,8 +12,8 @@
          $this->port = 3306;
          $this->Server = 'localhost';
          $this->Database = 'Evans';
-         $this->Username = 'teller';
-         $this->Password = '53415483evans';
+         $this->Username = 'evans';
+         $this->Password = 'wa53415483evans';
          $this->Cryptkey = '91939';
          parent::__construct($this->Server, $this->Username, $this->Password, $this->Database);
  

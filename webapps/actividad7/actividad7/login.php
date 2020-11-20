@@ -8,7 +8,6 @@
       $db = new MySQL();
       $Cryptkey = $db->getCryptkey();
       $SelectUserQry = "SELECT `U`.`ID` `ID`, CONCAT(`U`.`Lastnames`, ', ', `U`.`Names`) `Birthname`, `U`.`Role` `Role` FROM `Users` `U` WHERE `U`.`ID` = ? AND `U`.`Password` = AES_ENCRYPT(?, ?)";
-      $SelectOwnerQry = "SELECT `O`.`ID` `ID`, `O`.`Name` `Birthname` FROM `Owners` `O` WHERE `O`.`ID` = ? AND `O`.`Password` = AES_ENCRYPT(?, ?)";
       $stmt = $db->prepare($SelectOwnerQry);
       $stmt->bind_param('sss', $Username, $Password, $Cryptkey);
       $stmt->execute();
@@ -57,15 +56,14 @@
                       <div class="clr"></div>
                   </div>
                   <div class="login">
-                      <div class="col">
+                      <div class="fields-container">
                           <input type="text" placeholder="Usuario">
                           <input type="password" placeholder="Contaseña">
-                          <div class="buttons-container">
-                              <button type="submit" class="submit toggle" href="#">Entrar</button>
-                              <button type="submit" class="submit toggle" href="#">Registrarse</button>
-                          </div>
                       </div>
-                      <div class="clr"></div>
+                          <div class="buttons-container">
+                              <button type="submit" class="signin" href="#">Entrar</button>
+                              <button type="submit" class="signup" href="#">Registrarse</button>
+                          </div>
                   </div>
                   
                       <div class="col last">

@@ -61,7 +61,7 @@ img {
 }
 
 #wrapper {
-    width: 984px;
+    width: 100%;
     margin: auto;
 }
 
@@ -130,25 +130,38 @@ img {
 
 .login {
     /*background: url(../images/content.gif) repeat;*/
-    padding: 20px;
-    width: 50%;
-    margin: 5% 33%;
+    padding: 30px;
+    width: 325px;
+    height: 200px;
+    margin: 0 35%;
     background-color: rgba(35, 116, 109, 0.5);
+    vertical-align: middle;
+}
+
+.login .fields-container {
+    /*background: url(../images/content.gif) repeat;*/
+    padding: 5px;
+    width: 75%;
+    margin: 5px 9% 15px 9%;
+    background-color: transparent important;
+    vertical-align: middle;
 }
 
 .login .buttons-container {
     /*background: url(../images/content.gif) repeat;*/
-    padding: 20px;
+    padding: 5px;
     width: 50%;
-    margin: 5% 50%;
+    max-width: 50%;
+    margin: 5% 25% 15px 25%;
     background-color: transparent important;
+    vertical-align: middle;
 }
 
 input[type=text] {
     float: left;
-    width: 100%;
+    width: 250px;
     height: 30px;
-    margin: 0 33% 15px 33%;
+    margin: 0 5px 15px 5px;
     border-radius: 10px;
     background-color: rgba(42, 161, 152, 0.9);
     border-color: transparent;
@@ -160,9 +173,9 @@ input[type=text] {
 
 input[type=password] {
     float: left;
-    width: 100%;
+    width: 250px;
     height: 30px;
-    margin: 0 33% 15px 33%;
+    margin: 0 5px 15px 5px;
     border-radius: 10px;
     background-color: rgba(42, 161, 152, 0.9);
     border-color: transparent;
@@ -175,15 +188,15 @@ input[type=password] {
 input[type=text]:focus,
 [type=password]:focus {
     background-color: turquoise;
-    margin: 0px 30% 15px 30%;
-    width: 106%;
+    margin: 0px 1px 15px 1px;
+    width: 255px;
 }
 
-button[type=submit] {
+button[type=submit].signin {
     float: left;
-    width: 100%;
+    width: 150px;
     height: 30px;
-    margin: 0 33% 15px 0;
+    margin: 0 5px 15px 5px;
     border-radius: 10px;
     background-color: rgb(160, 102, 16);
     border-color: transparent;
@@ -193,9 +206,24 @@ button[type=submit] {
     letter-spacing: 2px;
 }
 
-button[type=submit]:hover:focus {
-    margin: 0 30% 15px 0;
-    width: 103%;
+button[type=submit].signup {
+    float: left;
+    width: 150px;
+    height: 30px;
+    margin: 0 5px 15px 5px;
+    border-radius: 10px;
+    background-color: rgb(83, 119, 0);
+    border-color: transparent;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: 1000;
+    letter-spacing: 2px;
+}
+
+button[type=submit].signin:hover:focus,
+.signup:hover:focus {
+    margin: 0 6px 15px 6px;
+    width: 145px;
     background-color: #444;
 }
 
@@ -269,4 +297,28 @@ button[type=submit]:hover:focus {
 
 #footer p {
     margin: 0 0 8px;
+}
+
+@media screen and (max-width: 800px) {
+    .panel {
+        text-align: center;
+    }
+    .dock {
+        text-align: center;
+    }
+    .main .services .container-service .service {
+        width: 46%;
+    }
+    .main .recent-projects .container-project .project {
+        width: 46%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    header .container-text .text .name {
+        font-size: 35px;
+    }
+    header .container-text .text .occupation {
+        font-size: 18px;
+    }
 }
