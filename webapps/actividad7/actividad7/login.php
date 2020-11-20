@@ -2,38 +2,31 @@
  require('mysql.php');
  require('cryptex.php');
  $header = "#";
-  if (isset($_POST['username']) && isset($_POST['password'])) {
-      $Username = $_REQUEST['username'];
-      $Password = $_REQUEST['password'];
+  if (isset($_POST['Username']) && isset($_POST['Password'])) {
+      $Username = $_REQUEST['Username'];
+      $Password = $_REQUEST['Password'];
+      echo 'Something';
       $db = new MySQL();
       $Cryptkey = $db->getCryptkey();
       $SelectUserQry = "SELECT `U`.`ID` `ID`, CONCAT(`U`.`Lastnames`, ', ', `U`.`Names`) `Birthname`, `U`.`Role` `Role` FROM `Users` `U` WHERE `U`.`ID` = ? AND `U`.`Password` = AES_ENCRYPT(?, ?)";
-      $stmt = $db->prepare($SelectOwnerQry);
+      $stmt = $db->prepare($SelectUserQry);
       $stmt->bind_param('sss', $Username, $Password, $Cryptkey);
       $stmt->execute();
       $result = $stmt->get_result();
-      if ($Qrow = $result->fetch_assoc()) {
-          $header = 'Location: dashboard.php?User='.Cryptex::encrypt(utf8_decode($Qrow['ID'])).'Birthname='.Cryptex::encrypt(utf8_encode($Qrow['Birthname']));
-      } else {
-          $stmt->free_result();
-          $stmt->close();
-          $stmt = $db->prepare($SelectUserQry);
-          $stmt->bind_param('sss', $Username, $Password, $Cryptkey);
-          $stmt->execute();
-          $result = $stmt->get_result();
-          if ($Qrow = $result->fetch_assoc()) {
-              session_start();
-              $_SESSION['Username'] = Cryptex::encrypt($Qrow['ID']);
-              $_SESSION['Role'] = Cryptex::encrypt($Qrow['Role']);
-              $_SESSION['Birthname'] = Cryptex::encrypt(utf8_encode($Qrow['Birthname']));
-              if (strcmp($Qrow['Role'], 'Pollster') == 0) {
-                  $header = 'Location: index.php';
-              }
-          } else {
-              $header = 'Location: '.$_SERVER['HTTP_REFERER'];
+      if ($Urow = $result->fetch_assoc()) {
+          session_start();
+          $_SESSION['Username'] = Cryptex::encrypt($Urow['ID']);
+          $_SESSION['Role'] = Cryptex::encrypt($Urow['Role']);
+          $_SESSION['Birthname'] = Cryptex::encrypt(utf8_encode($Urow['Birthname']));
+          if (strcmp($Urow['Role'], 'Manager') == 0) {
+              $header = 'Location: dashboard.php';
+          } elseif (strcmp($Urow['Role'], 'Attendant') == 0) {
+              $header = 'Location: surf.php';
           }
           $stmt->free_result();
           $stmt->close();
+      } else {
+          $header = 'Location: '.$_SERVER['HTTP_REFERER'];
       }
       $db->close();
       header($header);
@@ -55,17 +48,18 @@
                       </div>
                       <div class="clr"></div>
                   </div>
-                  <div class="login">
-                      <div class="fields-container">
-                          <input type="text" placeholder="Usuario">
-                          <input type="password" placeholder="Contaseña">
-                      </div>
-                          <div class="buttons-container">
-                              <button type="submit" class="signin" href="#">Entrar</button>
-                              <button type="submit" class="signup" href="#">Registrarse</button>
-                          </div>
-                  </div>
-                  
+                  <form name="login" method="POST">
+                      <div class="login">
+                          <div class="fields-container">
+                              <input type="text" name="Username" placeholder="Usuario">
+                              <input type="password" name="Password" placeholder="Contaseña">
+                           </div>
+                           <div class="buttons-container">
+                              <button type="submit" class="signin" value="signin" formaction="login.php">Entrar</button>
+                              <button type="submit" class="signup" value="signup" formaction="signup.php">Registrarse</button>
+                           </div>
+                        </div>
+                  </form>
                       <div class="col last">
                           <h3>Informacion de eventos</h3>
                           <div class="case">
