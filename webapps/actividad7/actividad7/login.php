@@ -56,32 +56,14 @@
                       </div>
                       <div class="clr"></div>
                   </div>
-                  <div class="content">
-                      <ul id="menu">
-                          <li><a class="current" href="#">Registrarse</a></li>
-                          <li><a href="#">Registrar Evento</a></li>
-                          <li><a href="#">Actualizar Evento</a></li>
-                          <li><a href="#">Eliminar Evento</a></li>
-                          <li><a href="#">Eliminar Participante</a></li>
-                      </ul>
-                      <div id="pitch">
-                          <h1>Gestion de la publicación, actualización y eliminación de distintos tipos de eventos.</h1>
-                          <p><em>Pueden ser: congresos, seminarios, talleres, etc. Así como la asistencia o inasistencia de los participantes.</em></p>
-                      </div>
+                  <div class="login">
                       <div class="col">
-                          <h2>Evento 1</h2>
-                          <p>About event 1.</p>
-                          <a class="link" href="#">MORE</a>
-                      </div>
-                      <div class="col">
-                          <h2>Evento 2</h2>
-                          <p>About event 2.</p>
-                          <a class="link" href="#">MORE</a>
-                      </div>
-                      <div class="col last">
-                          <h2>Evento 3</h2>
-                          <p>About event.</p>
-                          <a class="link" href="#">MORE</a>
+                          <input type="text" placeholder="Usuario">
+                          <input type="password" placeholder="Contaseña">
+                          <div class="buttons-container">
+                              <button type="submit" class="submit toggle" href="#">Entrar</button>
+                              <button type="submit" class="submit toggle" href="#">Registrarse</button>
+                          </div>
                       </div>
                       <div class="clr"></div>
                   </div>
