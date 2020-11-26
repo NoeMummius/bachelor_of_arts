@@ -1,15 +1,16 @@
 <?php
  require('mysql.php');
  $Attachment = $_REQUEST['attachment'];
- $Attendant = Cryptex::decrypt($_SESSION['Username']);
+ $Attendant = $_REQUEST['attendant'];
  $db = new MySQL();
- $UpdateAttachmentQry ="DELETE FROM `Tickets` WHERE `Attendat` = ? AND `Attachment` = ?";
+ $UpdateAttachmentQry ="DELETE FROM `Tickets` WHERE `Attachment` = ? AND `Attendant` = ?";
  $stmt = $db->prepare($UpdateAttachmentQry);
- $stmt->bind_param('ii', $id, $id);
+ $stmt->bind_param('ii', $Attachment, $Attendant);
  $result = $stmt->execute();
  if($result)
  {
-     $header = 'surf.php?delete='.$result;
+     $stmt->close();
+     $header = 'surf.php?cancel='.$result;
  }
  else
  {
