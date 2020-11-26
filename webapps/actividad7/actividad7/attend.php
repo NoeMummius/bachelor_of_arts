@@ -112,7 +112,7 @@
          $this->Cell(15);
          $this->Cell(10, 10, utf8_decode('Fecha: ') . date("d/m/Y"));
          $this->Cell(45);
-         $this->Image('images/budh_light_30x64.png', 170, 8, 33);
+         $this->Image('images/budh-light_30x64.png', 170, 8, 33);
          $this->Ln(10);
      }
      public function Footer()
@@ -127,7 +127,7 @@
  $Attendant = $_REQUEST['attendant'];
  $db = new MySQL();
  $InsertTicketQry ="INSERT INTO `Tickets` (`Attachment`, `Attendant`) VALUES (?, ?)";
- $SelectTicketQry = "SELECT `T`.`ID`, `E`.*, CONCAT(`U`.`Lastnames`, `U`.`Names`) `Birthname` FROM ((`Tickets` `T` INNER JOIN `Attachments` `E` ON `T`.`Attachment` = `E`.`ID`) INNER JOIN `Users` `U` ON `T`.`Attendant` = `U`.`ID`) WHERE `T`.`Attachment` = ? AND `T`.`Attendant` = ?";
+ $SelectTicketQry = "SELECT MAX(`T`.`ID`), `E`.*, CONCAT(`U`.`Lastnames`, `U`.`Names`) `Birthname` FROM ((`Tickets` `T` INNER JOIN `Attachments` `E` ON `T`.`Attachment` = `E`.`ID`) INNER JOIN `Users` `U` ON `T`.`Attendant` = `U`.`ID`) WHERE `T`.`Attachment` = ? AND `T`.`Attendant` = ?";
  $stmt = $db->prepare($InsertTicketQry);
  $stmt->bind_param('is', $Attachment, $Attendant);
  $result = $stmt->execute();
@@ -159,13 +159,15 @@
          $pdf->SetTopMargin(25);
          $pdf->SetFontSize(10);
          $db = new MySQL();
-         $qresult->free_result();
-         $Filename = $Ticket[2].'_'.$Folio;
-         for($i = 2; $i - sizeof($Ticket) < 0; $i++){
-         $pdf->Write(5, $Ticket[$i]);}
-         $pdf->Output('D', $Filename.'.pdf');
+         $Filename = $Ticket[2].'_'.$Ticket[0];
+         for ($i = 2; $i - sizeof($Ticket) < 0; $i++) {
+             $pdf->Write(5, $Ticket[$i]);
+         }
+         $pdf->Output('I', $Filename.'.pdf');
          $pdf->Close();
      }
+     $result->free();
+     $stmt->close();
  } else {
      $header = $_SERVER['HTTP_REFERER'];
  }

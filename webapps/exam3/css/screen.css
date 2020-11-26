@@ -1,0 +1,417 @@
+﻿/*
+	template: Lawyer&Attorney
+	author:   Luka Cvrk (www.solucija.com)
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: .74em Tahoma, Verdana, Sans-Serif, Arial;
+    background: url(../images/body.gif) repeat;
+    color: #7f7f7f;
+}
+
+h1 {
+    font: normal 3.4em "Trebuchet MS", Helvetica, Arial;
+}
+
+h2 {
+    font: normal 1.8em "Trebuchet MS", Helvetica, Arial;
+    color: #dfdfdf;
+    margin: 0 0 15px;
+}
+
+h3 {
+    font: normal 1.4em "Trebuchet MS", Helvetica, Arial;
+    margin: 0 0 20px;
+}
+
+h4 {
+    font: normal 1.2em "Trebuchet MS", Helvetica, Arial;
+    color: #dfdfdf;
+    margin: 0 0 4px;
+}
+
+p {
+    margin: 0 0 15px;
+    line-height: 1.6em;
+}
+
+a {
+    outline: 0;
+    color: #304D6F;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+li a,
+img {
+    display: block;
+}
+
+img {
+    outline: 0;
+    border: 0;
+}
+
+#wrapper {
+    width: 100%;
+    margin: auto;
+}
+
+.clr {
+    clear: both;
+}
+
+#logo {
+    float: left;
+    padding: 30px 15px;
+}
+
+#logo h1 a {
+    color: #fff;
+}
+
+#logo h1 a span {
+    color: #808080;
+}
+
+#menu {
+    height: 44px;
+    padding: 5px 0 0 4px;
+}
+
+#menu li {
+    float: left;
+    font-size: 1.3em;
+    text-transform: uppercase;
+}
+
+#menu li a {
+    color: #888;
+    margin: 0 50px 0 0;
+}
+
+#menu li a.current,
+#menu li a:hover {
+    color: #fff;
+}
+
+#pitch {
+    clear: both;
+    background: url(../images/doc.png) no-repeat;
+    height: 228px;
+    margin: 0 0 30px;
+    padding: 60px 360px 0 30px;
+}
+
+#pitch h1 {
+    font-size: 2.4em;
+    color: #304D6F;
+    margin: 0 0 20px;
+}
+
+#pitch em {
+    font-size: 1.3em;
+    font-weight: bold;
+    line-height: 1.6em;
+}
+
+.content {
+    background: url(../images/content.gif) repeat;
+    padding: 20px;
+}
+
+.login {
+    /*background: url(../images/content.gif) repeat;*/
+    padding: 30px;
+    width: 325px;
+    height: 200px;
+    margin: 0 35%;
+    background-color: rgba(35, 116, 109, 0.5);
+    vertical-align: middle;
+}
+
+.login .fields-container {
+    /*background: url(../images/content.gif) repeat;*/
+    padding: 5px;
+    width: 75%;
+    margin: 5px 9% 15px 9%;
+    background-color: transparent important;
+    vertical-align: middle;
+}
+
+.login .buttons-container {
+    /*background: url(../images/content.gif) repeat;*/
+    padding: 5px;
+    width: 50%;
+    max-width: 50%;
+    margin: 5% 25% 15px 25%;
+    background-color: transparent important;
+    vertical-align: middle;
+}
+
+form .form {
+    /*background: url(../images/content.gif) repeat;*/
+    padding: 30px;
+    width: 325px;
+    height: fit-content;
+    margin: 0 35%;
+    background-color: rgba(35, 116, 109, 0.5);
+    vertical-align: middle;
+}
+
+form .form .buttons-container {
+    /*background: url(../images/content.gif) repeat;*/
+    width: fit-content;
+    height: fit-content;
+    margin-top: 0;
+    margin-right: 5px;
+    margin-left: 290px;
+    background-color: transparent important;
+    vertical-align: middle;
+    position: fixed;
+    display: list-item none;
+}
+
+input[type=text],
+[type=date],
+[type=time] {
+    float: left;
+    width: 250px;
+    height: 30px;
+    margin: 0 5px 15px 5px;
+    border-radius: 10px;
+    background-color: rgba(42, 161, 152, 0.9);
+    border-color: transparent;
+    color: rgb(0, 84, 90);
+    font-size: 20px;
+    font-weight: 1000;
+    letter-spacing: 2px;
+}
+
+label .username,
+.field {
+    float: left;
+    width: 250px;
+    height: 30px;
+    margin: 0 5px 15px 5px;
+    border-radius: 10px;
+    background-color: rgba(42, 161, 152, 0.9);
+    border-color: transparent;
+    color: rgb(0, 84, 90);
+    font-size: 20px;
+    font-weight: 1000;
+    letter-spacing: 2px;
+}
+
+input[type=password] {
+    float: left;
+    width: 250px;
+    height: 30px;
+    margin: 0 5px 15px 5px;
+    border-radius: 10px;
+    background-color: rgba(42, 161, 152, 0.9);
+    border-color: transparent;
+    color: rgb(0, 84, 90);
+    font-size: 20px;
+    font-weight: 1000;
+    letter-spacing: 2px;
+}
+
+textarea {
+    float: left;
+    width: 250px;
+    height: 300px;
+    margin: 0 5px 15px 5px;
+    border-radius: 10px;
+    background-color: rgba(42, 161, 152, 0.9);
+    border-color: transparent;
+    color: rgb(0, 84, 90);
+    font-size: 20px;
+    font-weight: 1000;
+    letter-spacing: 2px;
+}
+
+input[type=text]:focus,
+[type=date],
+[type=time],
+[type=password]:focus,
+textarea:focus {
+    background-color: turquoise;
+    margin: 0px 1px 15px 1px;
+    width: 255px;
+}
+
+button[type=submit].signin {
+    float: left;
+    width: 150px;
+    height: 30px;
+    margin: 0 5px 15px 5px;
+    border-radius: 10px;
+    background-color: rgb(160, 102, 16);
+    border-color: transparent;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: 1000;
+    letter-spacing: 2px;
+}
+
+button[type=submit].signup {
+    float: left;
+    width: 150px;
+    height: 30px;
+    margin: 0 5px 15px 5px;
+    border-radius: 10px;
+    background-color: rgb(83, 119, 0);
+    border-color: transparent;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: 1000;
+    letter-spacing: 2px;
+}
+
+button[type=submit].approve {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin: 0 5px 15px 5px;
+    border-radius: 100%;
+    background-color: rgb(16, 160, 64);
+    border-color: transparent;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: 1000;
+    letter-spacing: 2px;
+}
+
+button[type=submit].dismiss {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin: 0 5px 15px 5px;
+    border-radius: 100%;
+    background-color: rgb(187, 13, 13);
+    border-color: transparent;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: 1000;
+    letter-spacing: 2px;
+}
+
+button[type=submit].signin:hover:focus,
+.signup:hover:focus {
+    margin: 0 6px 15px 6px;
+    width: 145px;
+    background-color: #444;
+}
+
+button[type=submit] .approve:hover:focus,
+.dismiss:hover:focus {
+    margin: 0 6px 15px 6px;
+    width: 48px;
+    height: 48px;
+    background-color: #444;
+}
+
+.link {
+    background: #304D6F;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: .9em;
+}
+
+#main {
+    padding: 20px;
+}
+
+.col {
+    float: left;
+    width: 292px;
+    margin: 0 30px 15px 0;
+}
+
+.col.last {
+    float: right;
+    margin-right: 0;
+}
+
+.case img {
+    float: left;
+    clear: left;
+    margin: 0 20px 20px 0;
+    background: #121212;
+    padding: 3px;
+}
+
+.short {
+    padding: 0 0 15px 0;
+    background: url(../images/line.gif) repeat-x left bottom;
+}
+
+.case a,
+.article a {
+    color: #ddd;
+    font-weight: bold;
+}
+
+.date {
+    font-size: .84em;
+    margin: 0 0 3px;
+}
+
+#footer {
+    clear: both;
+    background: url(../images/line.gif) repeat-x;
+    padding: 20px 20px 10px;
+    font-size: .9em;
+}
+
+#footer a {
+    color: #ccc;
+    margin: 0 10px 0 0;
+    border-bottom: 1px dotted #444;
+    padding: 0 0 1px;
+}
+
+#links {
+    float: right;
+}
+
+#links a {
+    margin: 0 0 0 10px;
+}
+
+#footer p {
+    margin: 0 0 8px;
+}
+
+@media screen and (max-width: 800px) {
+    .panel {
+        text-align: center;
+    }
+    .dock {
+        text-align: center;
+    }
+    .main .services .container-service .service {
+        width: 46%;
+    }
+    .main .recent-projects .container-project .project {
+        width: 46%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    header .container-text .text .name {
+        font-size: 35px;
+    }
+    header .container-text .text .occupation {
+        font-size: 18px;
+    }
+}
