@@ -42,6 +42,7 @@
 			</div>
 			<form class="content" name="dashboard" method="post">
 				<ul id="menu">
+					<li><label class="username" name="username"><?php echo utf8_decode(Cryptex::decrypt($_SESSION['Username'])).' '.utf8_decode(Cryptex::decrypt($_SESSION['Birthname']));?></label></li>
 					<li><button type="submit" class="link" name="register" value="new" formaction="attachment.php">Registrar Evento</button></li>
 					<li><button type="submit" class="signin" name="logout" value="logout" formaction="logout.php">Salir</button></li>
 				</ul>
@@ -56,7 +57,7 @@
                  while ($Attachment = $aresult->fetch_assoc()) {
                      ?>
 				<div class="col">
-					<button type="submit" class="signup" name="manage" formaction="attachment.php" value="<?php echo $Attachment['ID'];?>"><span><?php echo $Attachment['Name']; ?>
+					<button type="submit" class="appointment" name="manage" formaction="attachment.php" value="<?php echo $Attachment['ID'];?>"><span><?php echo $Attachment['Name']; ?>
 					<p><?php echo $Attachment['Type'];?></p></span></button>
 				</div>
 				<?php
