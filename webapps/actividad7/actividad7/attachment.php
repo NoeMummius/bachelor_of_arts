@@ -9,6 +9,8 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 		<link rel="stylesheet" type="text/css" href="css/screen.css" media="screen" />
+		<link rel="stylesheet" href="../../bootstrap-4.5.2-dist/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
 		<title>Constancias Eventos</title>
 	</head>
 	<body>
@@ -34,8 +36,8 @@
 				</ul>
 				<div class="buttons-container">
 					<ul>
-						<li><button type="submit" value="approve" formaction="upload.php" class="approve"></button></li>
-						<li><button type="submit" value="dismiss" formaction="dashboard.php" class="dismiss"></button></li>
+						<li><button type="submit" value="approve" formaction="upload.php" class="approve"><span class="fas fa-check"></span></button></li>
+						<li><button type="submit" value="dismiss" formaction="dashboard.php" class="dismiss"><span class="fas fa-undo"></span></button></li>
 					</ul>
 				</div>
 				<div class="clr"></div>
@@ -72,8 +74,9 @@
 				</ul>
 				<div class="buttons-container">
 					<ul>
-						<li><button type="submit" value="approve" formaction="update.php" class="approve"></button></li>
-						<li><button type="submit" value="dismiss" formaction="dashboard.php" class="dismiss"></button></li>
+						<li><button type="submit" value="approve" formaction="update.php" class="approve"><span class="fas fa-check"></span></button></li>
+						<li><button type="submit" value="dismiss" formaction="delete.php" class="delete"><span class="fas fa-ban"></span></button></li>
+						<li><button type="submit" value="dismiss" formaction="dashboard.php" class="dismiss"><span class="fas fa-undo"></span></button></li>
 					</ul>
 				</div>
 				<div class="clr"></div>
@@ -120,8 +123,9 @@
 					</ul>
 					<div class="buttons-container">
 						<ul>
-							<li><button type="submit" value="approve" formaction="attend.php" class="approve"></button></li>
-							<li><button type="submit" value="dismiss" formaction="surf.php" class="dismiss"></button></li>
+							<li><button type="submit" value="approve" formaction="attend.php" class="approve"><span class="fas fa-check"></span></button></li>
+						    <li><button type="submit" value="dismiss" formaction="cancel.php" class="delete"><span class="fas fa-ban"></span></button></li>
+							<li><button type="submit" value="dismiss" formaction="surf.php" class="dismiss"><span class="fas fa-undo"></span></button></li>
 						</ul>
 					</div>
 					<div class="clr"></div>

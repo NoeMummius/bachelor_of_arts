@@ -9,8 +9,8 @@
  $edate = $_REQUEST['edate'];
  $etime = $_REQUEST['etime'];
  $db = new MySQL();
- $UpdateAttachmentQry ="UPDATE `Attachments` SET `Name` = ?, `Type` = ?, `Desc` = ?, `S_date` = DATE(?), `S_time` = TIME(?), `E_date` = DATE(?), `E_hour` = TIME(?) WHERE `ID` = ?";
- $db->prepare($UpdateAttachmentQry);
+ $UpdateAttachmentQry ="UPDATE `Attachments` SET `Name` = ?, `Type` = ?, `Desc` = ?, `S_date` = DATE(?), `S_time` = TIME(?), `E_date` = DATE(?), `E_time` = TIME(?) WHERE `ID` = ?";
+ $stmt = $db->prepare($UpdateAttachmentQry);
  $stmt->bind_param('sssssssi', $name, $type, $desc, $sdate, $stime, $edate, $etime, $id);
  $result = $stmt->execute();
  if($result)

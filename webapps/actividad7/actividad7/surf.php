@@ -10,6 +10,14 @@
 		 echo '<script type="text/javascript">alert("Ocurrió un error durante la carga.");</script>';
 	 }
  }
+ if(isset($_GET['cancel'])){
+	 if($_GET['cancel']){
+		 echo '<script type="text/javascript">alert("Cancelación exitosa");</script>';
+	 }
+	 else{
+		 echo '<script type="text/javascript">alert("Ocurrió un error durante la carga.");</script>';
+	 }
+ }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">

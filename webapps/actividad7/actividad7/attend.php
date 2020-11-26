@@ -3,11 +3,11 @@
  require('fpdf/fpdf.php');
  class PDF extends FPDF
  {
-     protected $B = 0;
-     protected $I = 0;
-     protected $U = 0;
-     protected $HREF = '';
-     protected $col = 0; // Columna actual
+    protected $B = 0;
+    protected $I = 0;
+    protected $U = 0;
+    protected $HREF = '';
+    protected $col = 0; // Columna actual
     protected $y0;      // Ordenada de comienzo de la columna
     public function WriteHTML($html)
     {
@@ -127,7 +127,7 @@
  $Attendant = $_REQUEST['attendant'];
  $db = new MySQL();
  $InsertTicketQry ="INSERT INTO `Tickets` (`Attachment`, `Attendant`) VALUES (?, ?)";
- $SelectTicketQry = "SELECT MAX(`T`.`ID`), `E`.*, CONCAT(`U`.`Lastnames`, `U`.`Names`) `Birthname` FROM ((`Tickets` `T` INNER JOIN `Attachments` `E` ON `T`.`Attachment` = `E`.`ID`) INNER JOIN `Users` `U` ON `T`.`Attendant` = `U`.`ID`) WHERE `T`.`Attachment` = ? AND `T`.`Attendant` = ?";
+ $SelectTicketQry = "SELECT MAX(`T`.`ID`), `E`.*, CONCAT(`U`.`Lastnames`, ' ', `U`.`Names`) `Birthname` FROM ((`Tickets` `T` INNER JOIN `Attachments` `E` ON `T`.`Attachment` = `E`.`ID`) INNER JOIN `Users` `U` ON `T`.`Attendant` = `U`.`ID`) WHERE `T`.`Attachment` = ? AND `T`.`Attendant` = ?";
  $stmt = $db->prepare($InsertTicketQry);
  $stmt->bind_param('is', $Attachment, $Attendant);
  $result = $stmt->execute();
@@ -143,7 +143,7 @@
          $pdf->SetTitle($Ticket[0]);
          $pdf->setAuthor('Evans');
          $pdf->AliasNbPages();
-         $pdf->AddPage();
+         $pdf->AddPage('Portrait', 'A5');
          $pdf->SetFont('Helvetica');
          //$pdf->Write(5,utf8_decode('Para más información acerca de la evaluación, presione '));
          //$pdf->SetFont('','U');
@@ -161,7 +161,7 @@
          $db = new MySQL();
          $Filename = $Ticket[2].'_'.$Ticket[0];
          for ($i = 2; $i - sizeof($Ticket) < 0; $i++) {
-             $pdf->Write(5, $Ticket[$i]);
+             $pdf->Write(5, utf8_decode($Ticket[$i])."\n");
          }
          $pdf->Output('I', $Filename.'.pdf');
          $pdf->Close();
@@ -172,5 +172,5 @@
      $header = $_SERVER['HTTP_REFERER'];
  }
  $db->close();
- header('Location: '.$header);
+ //header('Location: '.$header);
  die();
