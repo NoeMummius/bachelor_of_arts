@@ -163,7 +163,7 @@
          for ($i = 2; $i - sizeof($Ticket) < 0; $i++) {
              $pdf->Write(5, utf8_decode($Ticket[$i])."\n");
          }
-         $pdf->Output('D', $Filename.'.pdf');
+         $pdf->Output('I', $Filename.'.pdf');
          $pdf->Close();
      }
      $result->free();
@@ -172,5 +172,5 @@
      $header = $_SERVER['HTTP_REFERER'];
  }
  $db->close();
- header('Location: '.$header);
+ //header('Location: '.$header);
  die();
