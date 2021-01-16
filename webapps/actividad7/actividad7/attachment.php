@@ -16,7 +16,7 @@
 	<body>
 		<?php
          if (isset($_POST['register'])) {
-        ?>
+             ?>
 		<div id="wrapper">
 			<div id="header">
 				<div id="logo">
@@ -44,16 +44,14 @@
 			</form>
 		</div>
 		<?php
-		 }
-		 elseif (isset($_POST['manage'])) {
-			$db = new MySQL();
-			$SelectAttachmentQry = "SELECT * FROM `Attachments` WHERE `ID` = ?";
-			$stmt1 = $db->prepare($SelectAttachmentQry);
-			$stmt1->bind_param('i', $_POST['manage']);
-			$stmt1->execute();
-			$eresult = $stmt1->get_result();
-			$Attachment = $eresult->fetch_assoc();
-        ?>
+         } elseif (isset($_POST['manage'])) {
+             $db = new MySQL();
+             $SelectAttachmentQry = "SELECT * FROM `Attachments` WHERE `ID` = ?";
+             $stmt1 = $db->prepare($SelectAttachmentQry);
+             $stmt1->bind_param('i', $_POST['manage']);
+             $stmt1->execute();
+             $eresult = $stmt1->get_result();
+             $Attachment = $eresult->fetch_assoc(); ?>
 		<div id="wrapper">
 			<div id="header">
 				<div id="logo">
@@ -63,14 +61,14 @@
 			</div>
 			<form class="form" name="manage_attachment" method="post">
 				<ul id="menu">
-					<li><input type="text" name="id" value="<?php echo $Attachment['ID'];?>" readonly></li>
-					<li><input type="text" name="name" value="<?php echo $Attachment['Name'];?>"></li>
-					<li><input type="text" name="type" value="<?php echo $Attachment['Type'];?>"></li>
-					<li><input type="date" name="sdate" value="<?php echo $Attachment['S_date'];?>"></li>
-					<li><input type="time" name="stime" value="<?php echo $Attachment['S_time'];?>"></li>
-					<li><input type="date" name="edate" value="<?php echo $Attachment['E_date'];?>"></li>
-					<li><input type="time" name="etime" value="<?php echo $Attachment['E_time'];?>"></li>
-					<li><textarea name="desc" placeholder="Descripción"><?php echo $Attachment['Desc'];?></textarea></li>
+					<li><input type="text" name="id" value="<?php echo $Attachment['ID']; ?>" readonly></li>
+					<li><input type="text" name="name" value="<?php echo $Attachment['Name']; ?>"></li>
+					<li><input type="text" name="type" value="<?php echo $Attachment['Type']; ?>"></li>
+					<li><input type="date" name="sdate" value="<?php echo $Attachment['S_date']; ?>"></li>
+					<li><input type="time" name="stime" value="<?php echo $Attachment['S_time']; ?>"></li>
+					<li><input type="date" name="edate" value="<?php echo $Attachment['E_date']; ?>"></li>
+					<li><input type="time" name="etime" value="<?php echo $Attachment['E_time']; ?>"></li>
+					<li><textarea name="desc" placeholder="Descripción"><?php echo $Attachment['Desc']; ?></textarea></li>
 				</ul>
 				<div class="buttons-container">
 					<ul>
@@ -83,24 +81,22 @@
 			</form>
 		</div>
 		<?php
-			 $stmt1->close();
-			 $db->close();
-         }
-		 elseif (isset($_POST['attend'])) {
-			$db = new MySQL();
-			$SelectAttachmentQry = "SELECT * FROM `Attachments` WHERE `ID` = ?";
-			$stmt1 = $db->prepare($SelectAttachmentQry);
-			$stmt1->bind_param('i', $_POST['attend']);
-			$stmt1->execute();
-			$eresult = $stmt1->get_result();
-			$Attachment = $eresult->fetch_assoc();
-			 $SelectAttendantQry="SELECT CONCAT(`Lastnames`, ', ', `Names`) `Birthname` FROM `Users` WHERE `ID` = ?";
-			 $stmt2 = $db->prepare($SelectAttendantQry);
-			 $stmt2->bind_param('s', $User);
-			 $stmt2->execute();
-			 $uresult = $stmt2->get_result();
-			 $Attendant = $uresult->fetch_assoc();
-			?>
+             $stmt1->close();
+             $db->close();
+         } elseif (isset($_POST['attend'])) {
+             $db = new MySQL();
+             $SelectAttachmentQry = "SELECT * FROM `Attachments` WHERE `ID` = ?";
+             $stmt1 = $db->prepare($SelectAttachmentQry);
+             $stmt1->bind_param('i', $_POST['attend']);
+             $stmt1->execute();
+             $eresult = $stmt1->get_result();
+             $Attachment = $eresult->fetch_assoc();
+             $SelectAttendantQry="SELECT CONCAT(`Lastnames`, ', ', `Names`) `Birthname` FROM `Users` WHERE `ID` = ?";
+             $stmt2 = $db->prepare($SelectAttendantQry);
+             $stmt2->bind_param('s', $User);
+             $stmt2->execute();
+             $uresult = $stmt2->get_result();
+             $Attendant = $uresult->fetch_assoc(); ?>
 			<div id="wrapper">
 				<div id="header">
 					<div id="logo">
@@ -110,16 +106,16 @@
 				</div>
 				<form class="form" name="attend_attachment" method="post">
 					<ul id="menu">
-					<li><input type="text" class="field" name="attachment" value="<?php echo $Attachment['ID'];?>" visible="false"></li>
-					<li><label class="field" name="name"><?php echo $Attachment['Name'];?></label></li>
-					<li><label class="field" name="type"><?php echo $Attachment['Type'];?></label></li>
-					<li><label class="field" name="sdate"><?php echo $Attachment['S_date'];?></label></li>
-					<li><label class="field" name="shour"><?php echo $Attachment['S_time'];?></label></li>
-					<li><label class="field" name="edate"><?php echo $Attachment['E_date'];?></label></li>
-					<li><label class="field" name="ehour"><?php echo $Attachment['E_time'];?></label></li>
-					<li><textarea name="desc" placeholder="Descripción" readonly><?php echo $Attachment['Desc'];?></textarea></li>
-					<li><input type="text" class="field" name="attendant" value="<?php echo $User;?>" visible="false"></li>
-					<li><label class="field" name="name"><?php echo $Attendant['Birthname'];?></label></li>
+					<li><input type="text" class="field" name="attachment" value="<?php echo $Attachment['ID']; ?>" visible="false"></li>
+					<li><label class="field" name="name"><?php echo $Attachment['Name']; ?></label></li>
+					<li><label class="field" name="type"><?php echo $Attachment['Type']; ?></label></li>
+					<li><label class="field" name="sdate"><?php echo $Attachment['S_date']; ?></label></li>
+					<li><label class="field" name="shour"><?php echo $Attachment['S_time']; ?></label></li>
+					<li><label class="field" name="edate"><?php echo $Attachment['E_date']; ?></label></li>
+					<li><label class="field" name="ehour"><?php echo $Attachment['E_time']; ?></label></li>
+					<li><textarea name="desc" placeholder="Descripción" readonly><?php echo $Attachment['Desc']; ?></textarea></li>
+					<li><input type="text" class="field" name="attendant" value="<?php echo $User; ?>" visible="false"></li>
+					<li><label class="field" name="name"><?php echo $Attendant['Birthname']; ?></label></li>
 					</ul>
 					<div class="buttons-container">
 						<ul>
@@ -132,12 +128,12 @@
 				</form>
 			</div>
 			<?php
-			 $eresult->free();
-			 $uresult->free();
-			 $stmt1->close();
-			 $stmt2->close();
-			 $db->close();
-			 }
-			?>
+             $eresult->free();
+             $uresult->free();
+             $stmt1->close();
+             $stmt2->close();
+             $db->close();
+         }
+            ?>
 	</body>
 </html>

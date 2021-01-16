@@ -1,4 +1,5 @@
 <?php
+ include('sessions.php');
  require('mysql.php');
  require('fpdf/fpdf.php');
  class PDF extends FPDF
@@ -112,6 +113,7 @@
          $this->Cell(15);
          $this->Cell(10, 10, utf8_decode('Fecha: ') . date("d/m/Y"));
          $this->Cell(45);
+         $this->Image('images/budh-light_30x64.png', 25, 8, 33);
          $this->Image('images/budh-light_30x64.png', 170, 8, 33);
          $this->Ln(10);
      }
