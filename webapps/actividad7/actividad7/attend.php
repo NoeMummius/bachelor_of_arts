@@ -92,13 +92,13 @@
          global $title;
          $this->SetFont('Arial', 'B', 15);
          $w = $this->GetStringWidth('Comprobante de asistencia') + 6;
-         $this->SetX((210 - $w) / 2);
+         $this->SetX(($this->GetPageWidth() - $w) / 2);
          $this->Cell($w, 10, utf8_decode('Comprobante de asistencia'), 0, 0, 'C');
 
          $this->Ln(10);
          $this->SetFont('Arial', 'B', 15);
          $w = $this->GetStringWidth($title) + 6;
-         $this->SetX((210 - $w) / 2);
+         $this->SetX(($this->GetPageWidth() - $w) / 2);
          $this->SetDrawColor(0, 80, 180);
          //$this->SetFillColor(230, 230, 0);
          $this->SetFillColor(230, 230, 230);
@@ -113,8 +113,8 @@
          $this->Cell(15);
          $this->Cell(10, 10, utf8_decode('Fecha: ') . date("d/m/Y"));
          $this->Cell(45);
-         $this->Image('images/budh-light_30x64.png', 25, 8, 33);
-         $this->Image('images/budh-light_30x64.png', 170, 8, 33);
+         $this->Image('images/budh-light_30x64.png', 15, 8, 30, 64);
+         $this->Image('images/budh-light_30x64.png', $this->GetPageWidth() - 15 - 30, 8, 30, 64);
          $this->Ln(10);
      }
      public function Footer()
