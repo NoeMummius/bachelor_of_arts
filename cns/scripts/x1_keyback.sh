@@ -1,10 +1,13 @@
 #! /bin/bash
 clear
-read -n 2 -p 'Type a key: ' key
-if ($key -ge [0-9]) then
- echo "You typed: $key"
-elif ($key -ge [a-zA-Z]) then
-  echo "You typed: $key"
+read -p "Type any key: " key
+clear
+if  [test $key -eq [0-9]]; then
+ echo "You've typed $key"
+elif [test $key -eq [a-z]]; then
+ echo "You've type $key"
+elif [test $key -eq [A-Z]]; then
+ echo "You've type $key"
 else
- echo "This isn't an alphanumeric character"
+ echo "You must type an alphanumeric character";
 fi
