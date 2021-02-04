@@ -1,0 +1,5 @@
+initially:
+on1(a,1).   on1(b,2).   on1(c,3).
+on2(d,8).   on2(e,9).   on2(f,10).
+
+goal: on1(a,10),on1(b,9),on1(c,8),on2(d,1),on2(e,2),on2(f,3)?(15)

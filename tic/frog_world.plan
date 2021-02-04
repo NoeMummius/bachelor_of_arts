@@ -1,0 +1,26 @@
+fluents: 
+on1(B,L) requires frog1(B), location(L).
+on2(B,L) requires frog2(B), location(L).
+
+occupied(B) requires location(B).
+
+actions: 
+move1(B,L) requires frog1(B), location(L),
+on1(B,T), diferencia(L,T,R), #int(R), R<6, L>T.
+move2(B,L) requires frog2(B), location(L),
+on2(B,T), diferencia(T,L,R), #int(R), R<6, L<T.
+
+always:  
+executable move1(B,L).
+inertial on1(B,L).
+caused occupied(B) if on1(B1,B).
+caused on1(B,L) after move1(B,L).
+caused -on1(B,L1) after move1(B,L), on1(B,L1), L <> L1.
+
+executable move2(B,L).
+inertial on2(B,L).
+caused occupied(B) if on2(B1,B), rock(B).
+caused on2(B,L) after move2(B,L).
+caused -on2(B,L1) after move2(B,L), on2(B,L1), L <> L1.
+
+noConcurrency.

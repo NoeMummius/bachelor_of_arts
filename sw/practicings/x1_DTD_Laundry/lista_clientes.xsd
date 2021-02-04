@@ -1,0 +1,23 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <xsd:element name="lista_clientes" type="tipo_Lista_Clientes"/>
+ <xsd:complexType name="tipo_Lista_Clientes">
+  <xsd:complexContent>
+   <xsd:restriction>
+    <xsd:sequence>
+     <xsd:element name="cliente" type="tipo_cliente" maxOccurs="unbounded"/>
+    </xsd:sequence>
+   </xsd:restricion>
+  </xsd:complexContent>
+ </xsd:complexType>
+ <xsd:complexType name="tipo_cliente">
+  <xsd:complexContent>
+   <xsd:restriction base="xsd:anyType">
+    <xsd:sequence>
+     <xsd:element name="nombres" type="xsd:string"/>
+     <xsd:element name="apellidos" type="xsd:string"/>
+     <xsd:element name="telefono" type="xsd:pattern"/>
+    </xsd:sequence>
+   </xsd:restriction>
+  </xsd:complexContent>
+ </xsd:complexType>
+</xsd:schema>

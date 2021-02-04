@@ -1,0 +1,6 @@
+
+location(table) :- true. true.
+
+location(B) :- block(B).
+
+block(a). block(b). block(c).

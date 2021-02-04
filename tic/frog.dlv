@@ -1,0 +1,13 @@
+location(B) :- rock(B).
+diferencia(X,Y,R) :- #int(X),#int(Y),#int(R),+(R,Y,X). 
+producto(X,Y,R) :- #int(X),#int(Y),*(X,Y,R).
+suma(X,Y,R) :-  #int(R), #int(X), #int(Y),  R = X + Y.
+
+frog1(a).   frog2(d).
+frog1(b).   frog2(e).
+frog1(c).   frog2(f).
+
+rock(1).   rock(2).   rock(3).
+rock(4).   rock(5).   rock(6).
+rock(7).   rock(8).   rock(9).
+rock(10).
